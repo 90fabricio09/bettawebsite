@@ -59,29 +59,66 @@
     padding: 25px;
     display: none;
     opacity: 0;
-    transition: opacity 0.3s ease;
-    border-radius: 5px;
-    background: #000000;
-    background: -webkit-linear-gradient(158deg, rgba(0, 0, 0, 1) 0%, rgba(0, 133, 255, 1) 96%);
-    background: -moz-linear-gradient(158deg, rgba(0, 0, 0, 1) 0%, rgba(0, 133, 255, 1) 96%);
-    background: linear-gradient(158deg, rgba(0, 0, 0, 1) 0%, rgba(0, 133, 255, 1) 96%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#000000", endColorstr="#0085FF", GradientType=0);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 20px;
+    background: #ffffff50;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    box-shadow: 
+        0 8px 32px rgba(0, 0, 0, 0.1),
+        0 0 0 1px rgba(255, 255, 255, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.1);
     z-index: 9999;
+    position: relative;
+}
+
+.aba::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 50%, rgba(0, 133, 255, 0.1) 0%, transparent 50%),
+        radial-gradient(circle at 80% 50%, rgba(0, 133, 255, 0.05) 0%, transparent 50%);
+    animation: particleFloat 3s ease-in-out infinite;
+    pointer-events: none;
+    border-radius: 20px;
+}
+
+@keyframes particleFloat {
+    0%, 100% {
+        opacity: 0.3;
+        transform: translateY(0);
+    }
+    50% {
+        opacity: 0.6;
+        transform: translateY(-5px);
+    }
 }
 
 .aba h2 {
     font-size: 30px;
-    color: #ffffff;
+    color: #1a1a1a;
     margin-top: 30px;
     margin-bottom: 20px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
 }
 
 .aba h2 span {
     color: #0085ff;
+    text-shadow: 0 2px 4px rgba(0, 133, 255, 0.3);
 }
 
 .aba p {
-    color: #ffffff;
+    color: #333;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
 }
 
 .global-content {
@@ -92,16 +129,21 @@
 .content-sup {
     position: relative;
     cursor: pointer;
-    border-radius: 5px;
-    background-color: #ffffff;
+    border-radius: 15px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgb(255, 255, 255) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
     margin: 15px;
     padding: 15px;
-    transition: all 0.3s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 2;
 }
 
 .content-sup:hover {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    transform: translateY(-2px);
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgb(255, 255, 255) 100%);
 }
 
 .content-sup a {
@@ -196,7 +238,6 @@
 
     .aba h2 {
         font-size: 20px;
-        color: #ffffff;
         margin-top: 30px;
         margin-bottom: 20px;
     }

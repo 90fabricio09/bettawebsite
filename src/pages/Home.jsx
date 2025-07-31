@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import BettaAgency from '../assets/betta.png';
+import BettaNavbar from '../assets/betta-navbar.png';
 import HeroBg from '../assets/background.png';
 import ShowcaseImg from '../assets/showcase.png';
 import Portfolio1 from '../assets/hbfretamento.png';
@@ -36,8 +37,8 @@ export default function Home() {
   return (
     <>
       <header className={`bettaagency-hero ${scrollPosition > 50 ? 'scrolled' : ''}`}>
-        <nav className="navbar">
-          <div className="logo"><a href="/"><img src={BettaAgency} alt="Betta Agency - Agência de Identidade Visual e Desenvolvimento Web" loading="lazy" /></a></div>
+        <nav className={`navbar ${scrollPosition > 50 ? 'fixed' : ''}`}>
+          <div className="logo"><a href="/"><img src={scrollPosition > 50 ? BettaNavbar : BettaAgency} alt="Betta Agency - Agência de Identidade Visual e Desenvolvimento Web" loading="lazy" /></a></div>
           
           {/* Container que agrupa links e botão de Área do Cliente */}
           <div className={`nav-links-container ${isOpen ? 'active' : ''}`}>
@@ -148,18 +149,39 @@ export default function Home() {
         <div className="portfolio-grid">
           <a href="https://hbfretamento.com.br" target="_blank" rel="noopener noreferrer" className="portfolio-item">
             <div className="portfolio-image" style={{ backgroundImage: `url(${Portfolio1})` }} role="img" aria-label="Projeto HB Fretamento"></div>
-            <h3>HB Fretamento</h3>
-            <p>Identidade visual e desenvolvimento web</p>
+            <div className="portfolio-content">
+              <h3>HB Fretamento</h3>
+              <p>Identidade visual completa e desenvolvimento de website institucional para empresa de fretamento executivo</p>
+              <div className="portfolio-tags">
+                <span className="portfolio-tag">Identidade Visual</span>
+                <span className="portfolio-tag">Web Design</span>
+                <span className="portfolio-tag">Branding</span>
+              </div>
+            </div>
           </a>
           <a href="https://echotap.com.br" target="_blank" rel="noopener noreferrer" className="portfolio-item">
             <div className="portfolio-image" style={{ backgroundImage: `url(${Portfolio2})` }} role="img" aria-label="Projeto EchoTap"></div>
-            <h3>EchoTap</h3>
-            <p>Identidade visual e desenvolvimento web</p>
+            <div className="portfolio-content">
+              <h3>EchoTap</h3>
+              <p>Desenvolvimento de identidade visual e plataforma web para empresa de tecnologia e inovação</p>
+              <div className="portfolio-tags">
+                <span className="portfolio-tag">UI/UX Design</span>
+                <span className="portfolio-tag">Desenvolvimento Web</span>
+                <span className="portfolio-tag">Tecnologia</span>
+              </div>
+            </div>
           </a>
           <a href="https://cachehost.vercel.app" target="_blank" rel="noopener noreferrer" className="portfolio-item">
             <div className="portfolio-image" style={{ backgroundImage: `url(${Portfolio3})` }} role="img" aria-label="Projeto CacheHost"></div>
-            <h3>CacheHost</h3>
-            <p>Identidade visual e desenvolvimento web</p>
+            <div className="portfolio-content">
+              <h3>CacheHost</h3>
+              <p>Criação de identidade visual e desenvolvimento de plataforma web para empresa de hospedagem</p>
+              <div className="portfolio-tags">
+                <span className="portfolio-tag">Identidade Visual</span>
+                <span className="portfolio-tag">Web App</span>
+                <span className="portfolio-tag">Hospedagem</span>
+              </div>
+            </div>
           </a>
         </div>
       </section>

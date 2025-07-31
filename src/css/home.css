@@ -82,6 +82,16 @@ body {
   align-items: center;
   justify-content: space-between;
   z-index: 100;
+  transition: all 0.3s ease;
+}
+
+.navbar.fixed {
+  position: fixed;
+  background: #ffffff50;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  padding: 15px 40px;
 }
 
 .navbar .logo img {
@@ -434,81 +444,169 @@ body {
 
 /* Seção de Portfólio */
 .portfolio {
-  padding: 100px 20px;
-  background-color: #0a0a0a;
+  padding: 120px 20px;
+  background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
   color: #fff;
   text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(0, 133, 255, 0.1) 0%, transparent 50%),
+              radial-gradient(circle at 80% 20%, rgba(0, 133, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
 }
 
 .portfolio h2 {
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 20px;
-  color: #fff;
+  background: linear-gradient(to right, #fff 0%, #fff 60%, #0084ff5d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: 700;
+  position: relative;
+  z-index: 2;
+}
+
+.portfolio .section-subtitle {
+  font-size: 1.2rem;
+  color: #ccc;
+  margin-bottom: 60px;
+  position: relative;
+  z-index: 2;
 }
 
 .portfolio-grid {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 30px;
-  flex-wrap: wrap;
   max-width: 1200px;
   margin: 0 auto;
+  position: relative;
+  z-index: 2;
 }
 
 .portfolio-item {
-  background-color: #222;
-  border-radius: 20px;
+  background: linear-gradient(145deg, #1a1a1a, #222);
+  border-radius: 24px;
   overflow: hidden;
-  width: 350px;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   text-decoration: none;
   color: inherit;
   display: block;
   position: relative;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
-.portfolio-item:before {
+.portfolio-item::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
+  background: linear-gradient(135deg, rgba(0, 133, 255, 0.1) 0%, rgba(0, 0, 0, 0.9) 100%);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  transition: all 0.4s ease;
   z-index: 1;
 }
 
-.portfolio-item:hover:before {
+.portfolio-item:hover::before {
   opacity: 1;
 }
 
 .portfolio-item:hover {
   transform: translateY(-10px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 20px 40px rgba(0, 132, 255, 0.151), 0 0 60px rgba(0, 132, 255, 0.041);
+  border-color: rgba(0, 133, 255, 0.3);
 }
 
 .portfolio-image {
-  height: 250px;
+  height: 240px;
   background-color: #333;
   background-size: cover;
   background-position: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.portfolio-image::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.3) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-image::before {
+  opacity: 1;
+}
+
+.portfolio-content {
+  padding: 25px;
+  position: relative;
+  z-index: 3;
 }
 
 .portfolio-item h3 {
-  font-size: 1.5rem;
-  margin: 20px 0 10px;
+  font-size: 1.8rem;
+  margin: 0 0 15px 0;
   color: #fff;
+  font-weight: 600;
   position: relative;
-  z-index: 2;
+  z-index: 3;
+  transition: color 0.3s ease;
+}
+
+.portfolio-item:hover h3 {
+  color: #0085ff;
 }
 
 .portfolio-item p {
   color: #ccc;
-  margin-bottom: 20px;
+  margin: 0 0 20px 0;
+  font-size: 1rem;
+  line-height: 1.6;
   position: relative;
-  z-index: 2;
+  z-index: 3;
+}
+
+.portfolio-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 15px;
+  position: relative;
+  z-index: 3;
+}
+
+.portfolio-tag {
+  background: rgba(0, 133, 255, 0.2);
+  color: #0085ff;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 500;
+  border: 1px solid rgba(0, 133, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-tag {
+  background: rgba(0, 133, 255, 0.3);
+  border-color: rgba(0, 133, 255, 0.5);
 }
 
 /* Seção de Depoimentos */
@@ -744,7 +842,7 @@ body {
     right: -100%;
     width: 60%;
     height: 100vh;
-    background-color: rgba(0, 0, 0, 0.95);
+    background-color: rgba(255, 255, 255, 0.95);
     flex-direction: column;
     justify-content: center;
     padding: 20px;
@@ -770,7 +868,7 @@ body {
     font-size: 1.1rem;
     padding: 10px 0;
     display: block;
-    color: #fff;
+    color: #252525;
   }
 
   .client-area-button {
@@ -779,6 +877,13 @@ body {
     font-size: 1rem;
     width: auto;
     min-width: 120px;
+    background-color: #0085ff;
+    color: #fff;
+  }
+
+  .client-area-button:hover {
+    background-color: #0066cc;
+    color: #fff;
   }
 
   .bettaagency-title {
@@ -837,6 +942,55 @@ body {
     height: 400px;
   }
 
+  /* Portfolio responsivo */
+  .portfolio {
+    padding: 80px 20px;
+  }
+
+  .portfolio h2 {
+    font-size: 2.5rem;
+  }
+
+  .portfolio .section-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+  }
+
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+    max-width: 500px;
+  }
+
+  .portfolio-item {
+    border-radius: 20px;
+  }
+
+  .portfolio-image {
+    height: 250px;
+  }
+
+  .portfolio-content {
+    padding: 25px;
+  }
+
+  .portfolio-item h3 {
+    font-size: 1.6rem;
+  }
+
+  .portfolio-item p {
+    font-size: 0.95rem;
+  }
+
+  .portfolio-tags {
+    gap: 6px;
+  }
+
+  .portfolio-tag {
+    font-size: 0.75rem;
+    padding: 3px 10px;
+  }
+
   .testimonial-card {
     width: 100%;
   }
@@ -886,6 +1040,10 @@ body {
     padding: 15px 20px;
   }
 
+  .navbar.fixed {
+    padding: 12px 20px;
+  }
+
   .navbar .logo img {
     width: 100px;
   }
@@ -897,7 +1055,6 @@ body {
 
   .nav-links li a {
     font-size: 1rem;
-    color: #fff;
   }
 
   .client-area-button {
@@ -909,6 +1066,49 @@ body {
   .features h2,
   .cta h2 {
     font-size: 1.75rem;
+  }
+
+  /* Portfolio responsivo para telas pequenas */
+  .portfolio {
+    padding: 60px 15px;
+  }
+
+  .portfolio h2 {
+    font-size: 2rem;
+  }
+
+  .portfolio .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 30px;
+  }
+
+  .portfolio-grid {
+    gap: 25px;
+  }
+
+  .portfolio-image {
+    height: 220px;
+  }
+
+  .portfolio-content {
+    padding: 20px;
+  }
+
+  .portfolio-item h3 {
+    font-size: 1.4rem;
+  }
+
+  .portfolio-item p {
+    font-size: 0.9rem;
+  }
+
+  .portfolio-tags {
+    gap: 5px;
+  }
+
+  .portfolio-tag {
+    font-size: 0.7rem;
+    padding: 2px 8px;
   }
 }
 
