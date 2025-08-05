@@ -227,9 +227,9 @@ export default function Home() {
         <div className="cta-content">
           <h2>Pronto para criar sua identidade visual?</h2>
           <p>Transforme sua visão em realidade com a Betta Agency</p>
-          <div className="cta-buttons">
-            <a href='https://wa.me/5511931501833' target="_blank" rel="noopener noreferrer" className="bettaagency-button cta-button"><i className="bi bi-whatsapp"></i> Solicite um Orçamento</a>
-          </div>
+                          <div className="cta-buttons">
+                  <a href='https://wa.me/5511931501833' target="_blank" rel="noopener noreferrer" className="bettaagency-button"><i className="bi bi-whatsapp"></i> Solicite um Orçamento</a>
+                </div>
         </div>
       </section>
 

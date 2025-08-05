@@ -283,8 +283,8 @@ body {
   padding: 14px 32px;
   font-size: 1rem;
   font-weight: 500;
-  background-color: #0085ff;
-  color: #fff;
+  background-color: #ffffff;
+  color: #0085ff;
   border: none;
   border-radius: 999px;
   cursor: pointer;
@@ -292,7 +292,7 @@ body {
 }
 
 .bettaagency-button:hover {
-  background-color: #0066cc;
+  background-color: #e5e5e5;
   transform: translateY(-2px);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
@@ -680,48 +680,96 @@ body {
 
 /* Seção de Call-to-Action (CTA) */
 .cta {
-  padding: 100px 20px;
-  background-color: #fff;
-  color: #0a0a0a;
+  padding: 80px 20px;
+  background: url('../assets/bg-cta.png') center center/cover no-repeat;
+  color: #ffffff;
   text-align: center;
   position: relative;
   overflow: hidden;
-}
-
-.cta:before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at center, rgba(0, 133, 255, 0.05) 0%, rgba(0, 0, 0, 0) 70%);
-  z-index: 0;
+  min-height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .cta-content {
   position: relative;
   z-index: 1;
-  max-width: 800px;
+  max-width: 900px;
   margin: 0 auto;
+  animation: fadeInUp 1s ease-out;
 }
 
 .cta h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  color: #252525;
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 25px;
+  background: linear-gradient(to right, #252525, #404040);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  line-height: 1.2;
 }
 
 .cta p {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: #666;
   margin-bottom: 40px;
+  font-weight: 400;
+  line-height: 1.5;
 }
 
 .cta-buttons {
   display: flex;
-  gap: 20px;
+  gap: 25px;
   justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  background: linear-gradient(45deg, #ffffff, #f8f9fa);
+  color: #0085ff;
+  padding: 18px 40px;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.cta-button:before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+  transition: left 0.5s;
+}
+
+.cta-button:hover:before {
+  left: 100%;
+}
+
+.cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+  background: linear-gradient(45deg, #f8f9fa, #ffffff);
+}
+
+.cta-button i {
+  font-size: 1.2rem;
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover i {
+  transform: scale(1.1);
 }
 
 /* Footer */
