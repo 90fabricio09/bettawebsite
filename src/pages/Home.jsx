@@ -5,7 +5,7 @@ import HeroBg from '../assets/background.png';
 import ShowcaseImg from '../assets/showcase.png';
 import Portfolio1 from '../assets/hbfretamento.png';
 import Portfolio2 from '../assets/echotap.png';
-import Portfolio3 from '../assets/cachehost.png';
+import Portfolio3 from '../assets/multipixel.png';
 import { useInView } from 'react-intersection-observer';
 import CountUp from 'react-countup';
 
@@ -171,15 +171,15 @@ export default function Home() {
               </div>
             </div>
           </a>
-          <a href="https://cachehost.vercel.app" target="_blank" rel="noopener noreferrer" className="portfolio-item">
-            <div className="portfolio-image" style={{ backgroundImage: `url(${Portfolio3})` }} role="img" aria-label="Projeto CacheHost"></div>
+          <a href="https://multipixel.com.br" target="_blank" rel="noopener noreferrer" className="portfolio-item">
+            <div className="portfolio-image" style={{ backgroundImage: `url(${Portfolio3})` }} role="img" aria-label="Projeto MultiPixel"></div>
             <div className="portfolio-content">
-              <h3>CacheHost</h3>
-              <p>Criação de identidade visual e desenvolvimento de plataforma web para empresa de hospedagem</p>
+              <h3>MultiPixel</h3>
+              <p>Desenvolvimento completo de website e UI/UX design para produtora audiovisual com estúdio próprio</p>
               <div className="portfolio-tags">
-                <span className="portfolio-tag">Identidade Visual</span>
-                <span className="portfolio-tag">Web App</span>
-                <span className="portfolio-tag">Hospedagem</span>
+              <span className="portfolio-tag">UI/UX Design</span>
+              <span className="portfolio-tag">Desenvolvimento Web</span>
+                <span className="portfolio-tag">Audiovisual</span>
               </div>
             </div>
           </a>
