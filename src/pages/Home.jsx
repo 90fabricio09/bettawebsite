@@ -147,10 +147,10 @@ export default function Home() {
           <p className="section-subtitle">Projetos de identidade visual e desenvolvimento web que transformaram nossos clientes</p>
         </div>
         <div className="portfolio-grid">
-          <a href="https://hbfretamento.com.br" target="_blank" rel="noopener noreferrer" className="portfolio-item">
+          <a href="https://hblocadora.com.br" target="_blank" rel="noopener noreferrer" className="portfolio-item">
             <div className="portfolio-image" style={{ backgroundImage: `url(${Portfolio1})` }} role="img" aria-label="Projeto HB Fretamento"></div>
             <div className="portfolio-content">
-              <h3>HB Fretamento</h3>
+              <h3>HB Locadora</h3>
               <p>Identidade visual completa e desenvolvimento de website institucional para empresa de fretamento executivo</p>
               <div className="portfolio-tags">
                 <span className="portfolio-tag">Identidade Visual</span>
@@ -296,3 +296,4 @@ const NumberCard = ({ icon, end, suffix, label, description }) => {
     </div>
   );
 };
+
