@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import ImgChat from '/favicon.png'
-import '../css/Chat.css'
+import '../css/chat.css'
 
 function Chat() {
     const [isOpen, setIsOpen] = useState(false);
