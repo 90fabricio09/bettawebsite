@@ -7,6 +7,7 @@ import Portfolio1 from '../assets/hbfretamento.png';
 import Portfolio2 from '../assets/echotap.png';
 import Portfolio3 from '../assets/multipixel.png';
 import Portfolio4 from '../assets/agoma.png';
+import Portfolio5 from '../assets/tp3.png';
 import { useInView } from 'react-intersection-observer';
 import CountUp from 'react-countup';
 
@@ -35,7 +36,7 @@ export default function Home() {
       description: "Desenvolvimento de identidade visual e plataforma web para empresa de tecnologia e inovação",
       image: Portfolio2,
       link: "https://echotap.com.br",
-      tags: ["UI/UX Design", "Desenvolvimento Web", "Tecnologia"]
+      tags: ["UI/UX Design", "Desenvolvimento Web", "Tecnologia", "Identidade Visual"]
     },
     {
       id: 3,
@@ -52,6 +53,14 @@ export default function Home() {
       image: Portfolio4,
       link: "https://agomasp.com.br",
       tags: ["UI/UX Design", "Desenvolvimento Web"]
+    },
+    {
+      id: 5,
+      title: "TP3",
+      description: "Desenvolvimento completo do website e do Intranet.",
+      image: Portfolio5,
+      link: "https://tp3viseu.com",
+      tags: ["UI/UX Design", "Desenvolvimento Web", "Identidade Visual"]
     }
   ];
 
